@@ -9,7 +9,10 @@ int main(){
     string a ="rouling";
     string b = "publish";
     Book harry = Book(a, b, 123); 
-    cout << harry.author << endl;
+    cout << harry.get_author() << endl;
+    harry.set_author("another author");
+    cout << harry.get_author() << endl;
+    // cout << harry << endl;
     return 0;
 }
 
