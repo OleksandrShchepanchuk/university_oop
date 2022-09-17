@@ -7,7 +7,7 @@
 
 class Library {
 private:
-    std::vector<Book> books;
+    std::vector<Book> _books;
 public:
         Library();
         Library(std::vector<Book>  books);
@@ -15,7 +15,10 @@ public:
         Library(Library&& other);
         Library& operator=(Library& other);
         Library& operator=(Library&& other);
-        ~Library();
+        void add_books(vector<Book> _books);
+        void add_books(Book _books);
+        void remove_books(vector<int> id);
+        void remove_books(int id);
 };
 
 

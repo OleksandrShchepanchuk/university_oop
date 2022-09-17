@@ -3,23 +3,25 @@
 using namespace std;
 
 
+int Book::current_id = 1;
 
-
-Book::Book(string author_, string publish_org_, int year_) 
+Book::Book(string author_, string publish_org_, int year_)
 {
+    _id = current_id++;
     _author = author_;
     _publish_org = publish_org_;
     _year = year_;
 }
 
 
-Book::Book() 
+Book::Book()
 {
-    
+    _id = current_id++;
 }
 // copy constructor
 Book::Book(Book& other)
 {
+    this->_id = current_id++;
     this->_author = other._author;
     this->_publish_org = other._publish_org;
     this->_year = other._year;
@@ -28,14 +30,17 @@ Book::Book(Book& other)
 // move constructor
 Book::Book(Book&& other)
 {
+    this->_id = current_id++;
     this->_author = other._author;
     this->_publish_org = other._publish_org;
     this->_year = other._year;
 }
 
 // copy assignment
-Book& Book::operator=(Book& other) {
+Book& Book::operator=(Book& other)
+{
     if (this != &other) {
+        this->_id = other._id;
         this->_author = other._author;
         this->_publish_org = other._publish_org;
         this->_year = other._year;
@@ -46,6 +51,7 @@ Book& Book::operator=(Book& other) {
 // move assignment
 Book& Book::operator=(Book&& other) {
     if (this != &other) {
+        this->_id = other._id;
         this->_author = other._author;
         this->_publish_org = other._publish_org;
         this->_year = other._year;
@@ -59,6 +65,11 @@ std::string Book::get_author()
     return _author;
 }
 
+int Book::get_id()
+{
+    return _id;
+}
+
 
 std::string Book::get_publish_org()
 {
@@ -69,7 +80,6 @@ std::string Book::get_publish_org()
 int Book::get_year() {
     return _year;
 }
-
 
 void Book::set_author(std::string author)
 {

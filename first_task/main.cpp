@@ -9,9 +9,11 @@ int main(){
     string a ="rouling";
     string b = "publish";
     Book harry = Book(a, b, 123); 
-    cout << harry.get_author() << endl;
-    harry.set_author("another author");
-    cout << harry.get_author() << endl;
+    Book harry1 = Book(a, b, 123); 
+    cout << "id "  << endl;
+    cout << harry1.get_id() << endl;
+    cout << "second id "  << endl;
+    cout << harry.get_id() << endl;
     // cout << harry << endl;
     return 0;
 }

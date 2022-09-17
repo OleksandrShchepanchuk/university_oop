@@ -8,7 +8,9 @@
 
 class Book {
         std::string _author, _publish_org;
+        int _id;
         int _year;
+        static int current_id;
     public:
         Book();
         Book(std::string  author_, std::string  publish_org_, int year_);
@@ -22,6 +24,7 @@ class Book {
         void set_author(std::string author);
         void set_publish_org(std::string publish_org);
         void set_year(int year);
+        int get_id();
 };
 
 
