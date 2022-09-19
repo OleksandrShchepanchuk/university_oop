@@ -17,6 +17,7 @@ public:
         Library(Book* books, int quant_);
         Library(Library& other);
         Library(Library&& other);
+        ~Library();
         Library& operator=(Library& other);
         Library& operator=(Library&& other);
         void add_books(Book* books_, int quant_);
@@ -29,8 +30,8 @@ public:
         void search_by_id(int id);
         void show(std::ostream& os)const;
         void read_from_file(std::string file_name); 
-        void read_from_file(std::string file_name);
         void sort_library(std::string param);
+        void show()const;
 
 };
 

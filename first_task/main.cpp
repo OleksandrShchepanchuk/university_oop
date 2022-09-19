@@ -19,6 +19,7 @@ int main(){
     Library library;
     ofstream f("text2.txt");
     library.read_from_file("text.txt");
+    library.show();
     library.remove_books(3);
     library.show(f);
     // cout << harry << endl;

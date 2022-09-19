@@ -74,6 +74,10 @@ Library::Library()
     quant = 0;
 }
 
+Library::~Library()
+{ 
+    delete[] this->_books;
+}
 
 Library::Library(Book* books, int quant_) 
 {
@@ -100,6 +104,7 @@ Library::Library(Library&& other)
     {
         this->_books[i] = other._books[i];
     }
+    other._books = nullptr;
 }
 
 
@@ -107,6 +112,9 @@ Library& Library::operator=(Library& other)
 {
     if (this != &other) 
     {
+        if (this->_books) {
+                delete[] this->_books;
+            }
         for (int i = 0; i < this->quant; i++) 
         {
             this->_books[i] = other._books[i];
@@ -120,10 +128,14 @@ Library& Library::operator=(Library&& other)
 {
         if (this != &other) 
         {
+            if (this->_books) {
+                delete[] this->_books;
+            }
             for (int i = 0; i < this->quant; i++) 
             {
                 this->_books[i] = other._books[i];
             }
+            other._books = nullptr;
         }
         return *this;
 }
@@ -196,10 +208,6 @@ void Library::search_by_id(int id)
     }
 }
 
-
-
-
-
 void Library::remove_books(int* id, int quant_)
 {
     for (int i = 0; i < quant_; i++)
@@ -238,6 +246,13 @@ void Library::remove_books(int id)
     }
 }
 
+void Library::show()const
+{  
+    for (int i = 0; i < quant; i++) {
+        _books[i].print();
+    }
+}
+
 
 void Library::read_from_file(std::string file_name)
 {
@@ -257,6 +272,5 @@ void Library::read_from_file(std::string file_name)
         this->_books[quant].set_year(year);
         quant++;
     }
-
     f.close();
 }
