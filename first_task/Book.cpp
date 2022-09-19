@@ -1,5 +1,6 @@
 #include "header_files/book.h"
 #include <string>
+#include <fstream>
 using namespace std;
 
 
@@ -96,4 +97,31 @@ void Book::set_publish_org(std::string publish_org)
 void Book::set_year(int year) 
 {
    _year = year;
+}
+
+void Book::print()const
+{
+	cout << "id: " << _id << " ";
+	cout << "Name: " << _publish_org << " ";
+	cout << "Author: " << _author <<" ";
+	cout << "Year: " << _year << endl << endl;
+}
+std::istream& operator>>(std::istream& is, Book& book)
+{
+    is >> book._id;
+	is >> book._publish_org;
+	is >> book._author;
+	is >> book._year;
+	return is;
+}
+
+std::ostream& operator<<(std::ostream& os, Book& book)
+{
+	os << "id:" << book._id << "name of book: " << book._publish_org << endl << "author: " << book._author << endl << "year: " << book._year << endl;
+	return os;
+}
+
+void Book::print(std::ostream& os) const
+{
+  os << "id: " << this->_id << endl << "Name: " << this->_publish_org << endl << "Author: " << this->_author << endl << "Year: " << this->_year << endl << endl;
 }

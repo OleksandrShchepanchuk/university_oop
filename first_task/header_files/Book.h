@@ -3,6 +3,7 @@
 #define BOOK_BOOK_H
 #include <iostream> 
 #include <string>
+#include <fstream>
 
 
 
@@ -25,6 +26,12 @@ class Book {
         void set_publish_org(std::string publish_org);
         void set_year(int year);
         int get_id();
+        void print()const;
+        friend std::istream& operator>>(std::istream& is, Book& book);
+        friend std::ostream& operator<<(std::ostream& os, Book& book);
+        //~Book();
+        void print(std::ostream& os) const;
+        
 };
 
 
