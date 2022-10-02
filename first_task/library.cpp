@@ -91,6 +91,7 @@ Library::Library(Book* books, int quant_)
 
 
 Library::Library(Library& other) {
+    this->_books = new Book[MAX_QUANT];
     for (int i; i < other.quant; i++)
     {
         this->_books[i] = other._books[i];
@@ -115,6 +116,7 @@ Library& Library::operator=(Library& other)
         if (this->_books) {
                 delete[] this->_books;
             }
+        this->_books = new Book[MAX_QUANT];
         for (int i = 0; i < this->quant; i++) 
         {
             this->_books[i] = other._books[i];

@@ -1,5 +1,6 @@
 #include "header_files/book.h"
 #include "header_files/library.h"
+#include "header_files/fantasy_book.h"
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -16,34 +17,19 @@ int main(){
     // cout << harry1.get_id() << endl;
     // cout << "second id "  << endl;
     // cout << harry.get_id() << endl;
-    Library library;
-    ofstream f("text2.txt");
-    library.read_from_file("text.txt");
-    library.show();
-    library.remove_books(3);
-    library.show(f);
+    // Library library;
+    // ofstream f("text2.txt");
+    // library.read_from_file("text.txt");
+    // library.show();
+    // library.remove_books(3);
+    // library.add_books(harry);
+    // library.add_books(harry1);
+    // library.show(f);
     // cout << harry << endl;
-    
+    Book *A;
+    FantasyBook B(a,b,123,123);
+    A = &B;
+    A->print(cout);
+    B.print(cout);
     return 0;
 }
-
-// int main(){
-
-//     Book harry = Book("rouling", "publish", 123); 
-//     return 0;
-// }
-
-
-// class Book {
-//     public:
-//         string author, publish_org;
-//         int year;
-//         Book(string author_, string publish_org_, int year_) {
-//                 author = author_;
-//                 publish_org = publish_org_;
-//                 year = year_;
-//         }
-// };
-
-
-
