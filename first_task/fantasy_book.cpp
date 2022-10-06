@@ -19,8 +19,8 @@ FantasyBook::FantasyBook(std::string  author_, std::string  publish_org_, int ye
 : Book(author_, publish_org_,year_)
 {
     size_of_book = size_of_book_;
-
 }
+
 FantasyBook::FantasyBook(const FantasyBook& other)
 :   Book(other),
     size_of_book(other.size_of_book)

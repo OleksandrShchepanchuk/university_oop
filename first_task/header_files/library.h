@@ -17,7 +17,7 @@ public:
         Library(Book* books, int quant_);
         Library(Library& other);
         Library(Library&& other);
-        ~Library();
+        virtual ~Library();
         Library& operator=(Library& other);
         Library& operator=(Library&& other);
         void add_books(Book* books_, int quant_);

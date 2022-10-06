@@ -32,7 +32,7 @@ class Book {
         friend std::ostream& operator<<(std::ostream& os, Book& book);
         virtual void print(std::ostream& os) const;
         virtual void read_data(std::istream& is);
-        ~Book();
+        virtual ~Book();
         
 };
 

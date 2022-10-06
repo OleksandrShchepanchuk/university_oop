@@ -9,10 +9,10 @@ using namespace std;
 
 
 int main(){
-    string a ="rouling";
-    string b = "publish";
-    Book harry = Book(a, b, 123); 
-    Book harry1 = Book(a, b, 123); 
+    // string a ="rouling";
+    // string b = "publish";
+    // Book harry = Book(b, b, 123); 
+    // Book harry1 = Book(a, b, 123); 
     // cout << "id "  << endl;
     // cout << harry1.get_id() << endl;
     // cout << "second id "  << endl;
@@ -27,9 +27,13 @@ int main(){
     // library.show(f);
     // cout << harry << endl;
     Book *A;
-    FantasyBook B(a,b,123,123);
+    FantasyBook B("test1", "test2", 3, 123);
     A = &B;
     A->print(cout);
+    cout << endl;
     B.print(cout);
-    return 0;
+    B.read_data(cin);
+    B.print(cout);
+    // return 0;
+
 }

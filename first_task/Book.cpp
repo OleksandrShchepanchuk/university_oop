@@ -42,11 +42,12 @@ Book::Book(Book&& other)
     this->_year = other._year;
 }
 
+
 // copy assignment
 Book& Book::operator=(Book& other)
 {
     if (this != &other) {
-        this->_id = other._id;
+        this->_id = current_id++;
         this->_author = other._author;
         this->name = other.name;
         this->_year = other._year;
@@ -103,6 +104,8 @@ void Book::set_year(int year)
 {
    _year = year;
 }
+
+
 
 
 std::istream& operator>>(std::istream& is, Book& book)

@@ -167,7 +167,7 @@ void Library::search_by_author(std::string author)
         // if (!strcmp(author, books[i].getAuthor()))
         if (author == _books[i].get_author()) 
         {   
-            _books[i].print();
+            _books[i].print(std::cout);
         }
     }
 }
@@ -179,7 +179,7 @@ void Library::search_by_year(int year)
         // if (!strcmp(author, books[i].getAuthor()))
         if (year == _books[i].get_year()) 
         {   
-            _books[i].print();
+            _books[i].print(std::cout);
         }
     }
 }
@@ -192,7 +192,7 @@ void Library::search_by_name(std::string name)
         // if (!strcmp(author, books[i].getAuthor()))
         if (name == _books[i].get_publish_org()) 
         {   
-            _books[i].print();
+            _books[i].print(std::cout);
         }
     }
 }
@@ -205,7 +205,7 @@ void Library::search_by_id(int id)
         // if (!strcmp(author, books[i].getAuthor()))
         if (id == _books[i].get_id()) 
         {   
-            _books[i].print();
+            _books[i].print(std::cout);
         }
     }
 }
@@ -251,7 +251,7 @@ void Library::remove_books(int id)
 void Library::show()const
 {  
     for (int i = 0; i < quant; i++) {
-        _books[i].print();
+        _books[i].print(std::cout);
     }
 }
 
